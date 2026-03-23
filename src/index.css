@@ -1,0 +1,61 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", sans-serif;
+  
+  --color-brand-primary: #4f46e5; /* Indigo */
+  --color-brand-accent: #ef4444;  /* Red */
+  --color-brand-emergency: #ef4444;
+}
+
+@layer base {
+  body {
+    @apply bg-neutral-50 text-neutral-900 font-sans antialiased;
+  }
+}
+
+.glass-nav {
+  @apply sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-neutral-200;
+}
+
+.btn-primary {
+  @apply bg-brand-primary text-white px-6 py-3 rounded-xl font-medium transition-all hover:bg-indigo-700 active:scale-95 disabled:opacity-50 shadow-lg shadow-indigo-200;
+}
+
+.btn-accent {
+  @apply bg-brand-accent text-white px-6 py-3 rounded-xl font-medium transition-all hover:bg-red-600 active:scale-95 shadow-lg shadow-red-200;
+}
+
+.btn-emergency {
+  @apply bg-brand-emergency text-white px-6 py-3 rounded-xl font-bold uppercase tracking-wider transition-all hover:bg-red-600 animate-pulse;
+}
+
+/* Advanced Animations */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes scroll-loop {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-scroll-loop {
+  animation: scroll-loop 30s linear infinite;
+}
+
+.indigo-red-gradient {
+  background: linear-gradient(135deg, #4f46e5 0%, #ef4444 100%);
+}
+
+.indigo-red-text {
+  @apply text-transparent bg-clip-text;
+  background-image: linear-gradient(135deg, #4f46e5 0%, #ef4444 100%);
+}

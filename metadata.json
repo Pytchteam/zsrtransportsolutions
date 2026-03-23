@@ -1,0 +1,5 @@
+{
+  "name": "ZSR Transport Solutions",
+  "description": "Jamaica's multi-service mobility platform for vehicle sales, rentals, imports, and emergency roadside support.",
+  "requestFramePermissions": ["geolocation"]
+}
